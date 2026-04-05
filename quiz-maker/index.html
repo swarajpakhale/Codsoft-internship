@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Quiz Maker</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="container">
+          <h1 class="logo">Quiz Maker</h1>
+          <nav>
+            <button id="homeBtn" class="nav-btn">Home</button>
+            <button id="myQuizzesBtn" class="nav-btn">My Quizzes</button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container">
+        <!-- Home View -->
+        <section id="homeView" class="view active">
+          <div class="hero">
+            <h2>Welcome to Online Quiz Maker</h2>
+            <p>Create engaging quizzes or challenge yourself with existing ones!</p>
+            <div class="action-cards">
+              <div class="card">
+                <div class="card-icon"></div>
+                <h3>Create Quiz</h3>
+                <p>Build your own quiz with custom questions and multiple-choice answers</p>
+                <button class="btn btn-primary" id="createQuizBtn">Create New Quiz</button>
+              </div>
+              <div class="card">
+                <div class="card-icon"></div>
+                <h3>Take Quiz</h3>
+                <p>Browse available quizzes and test your knowledge</p>
+                <button class="btn btn-secondary" id="browseQuizzesBtn">Browse Quizzes</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quiz Creation View -->
+        <section id="createView" class="view">
+          <div class="form-container">
+            <h2>Create New Quiz</h2>
+            <form id="quizForm">
+              <div class="form-group">
+                <label for="quizTitle">Quiz Title</label>
+                <input type="text" id="quizTitle" required placeholder="Enter quiz title">
+              </div>
+              <div class="form-group">
+                <label for="quizDescription">Description</label>
+                <textarea id="quizDescription" rows="3" placeholder="Brief description of your quiz"></textarea>
+              </div>
+
+              <div id="questionsContainer">
+                <h3>Questions</h3>
+              </div>
+
+              <button type="button" class="btn btn-secondary" id="addQuestionBtn">+ Add Question</button>
+              <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="cancelCreateBtn">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Quiz</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Quiz Listing View -->
+        <section id="listingView" class="view">
+          <h2>Available Quizzes</h2>
+          <div id="quizList" class="quiz-grid"></div>
+          <div id="emptyState" class="empty-state">
+            <p>No quizzes available yet. Create one to get started!</p>
+            <button class="btn btn-primary" id="createFirstQuizBtn">Create Your First Quiz</button>
+          </div>
+        </section>
+
+        <!-- Quiz Taking View -->
+        <section id="takingView" class="view">
+          <div class="quiz-container">
+            <div class="quiz-header">
+              <h2 id="quizTitleDisplay"></h2>
+              <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+              </div>
+              <p class="question-counter">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">1</span></p>
+            </div>
+
+            <div id="questionDisplay" class="question-display"></div>
+
+            <div class="quiz-navigation">
+              <button class="btn btn-outline" id="prevBtn" disabled>Previous</button>
+              <button class="btn btn-primary" id="nextBtn">Next</button>
+              <button class="btn btn-primary" id="submitQuizBtn" style="display: none;">Submit Quiz</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Results View -->
+        <section id="resultsView" class="view">
+          <div class="results-container">
+            <h2>Quiz Results</h2>
+            <div class="score-display">
+              <div class="score-circle">
+                <span id="scorePercentage">0%</span>
+              </div>
+              <p class="score-text">You scored <span id="scoreText">0 out of 0</span></p>
+            </div>
+
+            <div id="answersReview" class="answers-review"></div>
+
+            <div class="results-actions">
+              <button class="btn btn-secondary" id="retakeQuizBtn">Retake Quiz</button>
+              <button class="btn btn-primary" id="backToListBtn">Back to Quizzes</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <p>&copy; 2026 Online Quiz Maker. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
