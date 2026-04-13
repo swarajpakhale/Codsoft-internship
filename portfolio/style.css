@@ -117,12 +117,9 @@ body {
 }
 
 .hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;              
     align-items: center;
-    position: relative;
-    z-index: 1;
+    justify-content: space-between;
 }
 
 .hero h1 {
