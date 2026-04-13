@@ -8,12 +8,12 @@
 /* Background */
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(135deg, #3d295e, #380415, #300c3e);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(209, 209, 209);
 }
 
 /* Container */
